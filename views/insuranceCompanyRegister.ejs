@@ -1,0 +1,47 @@
+<% layout("boilerplate.ejs") %>
+
+  <body>
+    <h2 style="margin-top:20px;">Get listed as an Insurance Company at PharmaHub <i class="fa-solid fa-notes-medical" style="color: #1f9c61;"></i></h2>
+    <br>
+    <form method="POST" action="/insuranceCompanyRegister" enctype="multipart/form-data">
+      <div>
+      <label for="Name" class="form-label">Name of Organisation</label>
+      <input name="listing[title]"  type="text" class="form-control"/>
+     </div>
+     <br>
+      <div>
+        <label for="description" class="form-label">Name of the policy</label>
+        <input name="listing[title]"  type="text" class="form-control"/>
+
+      </div>
+      <br>
+     <div>
+      <label for="image" class="form-label">Upload Terms & conditions</label>
+      <input
+      name="listing[image]"
+      type="file"
+      class="form-control"
+    />
+     </div>
+      <br />
+      <div>     
+        <label for="price" class="form-label">Insurance premium per month</label>
+         <input name="listing[price]" class="form-control" type="text" />
+      </div>
+      <br />
+      <div>
+        <label for="country" class="form-label">Office Address</label>
+        <input name="listing[country]" class="form-control" type="text" />
+      </div>
+      <br />
+      <div>
+        <label for="country" class="form-label">Phone Number</label>
+        <input name="listing[country]" class="form-control" type="text" />
+      </div>
+      <br>
+      <h6> *All the details entered will be verified by us.</h4>
+      <br>
+      <button class="btn btn-success">Join PharmaHub</button>
+    </form>
+    <br>
+  </body>

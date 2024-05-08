@@ -1,0 +1,42 @@
+<% layout("boilerplate.ejs") %>
+
+  <body>
+    <h2 style="margin-top:20px;">Become a verified consultant at PharmaHub <i class="fa-solid fa-user-doctor" style="color: #1f9c61;"></i></h2>
+    <br>
+    <form method="POST" action="/doctorRegister" enctype="multipart/form-data">
+      <div>
+      <label for="Name" class="form-label">Name</label>
+      <input name="listing[title]"  type="text" class="form-control"/>
+     </div>
+     <br>
+      <div>
+        <label for="description" class="form-label">Phone number</label>
+        <input name="listing[title]"  type="text" class="form-control"/>
+
+      </div>
+      <br>
+     <div>
+      <label for="image" class="form-label">Upload Profile Image</label>
+      <input
+      name="listing[image]"
+      type="file"
+      class="form-control"
+    />
+     </div>
+      <br />
+      <div>     
+        <label for="price" class="form-label">Qualifications</label>
+         <input name="listing[price]" class="form-control" type="text" />
+      </div>
+      <br />
+      <div>
+        <label for="country" class="form-label">Consultation fees</label>
+        <input name="listing[country]" class="form-control" type="text" />
+      </div>
+      <br />
+      <h6> *All the details entered will be verified by us.</h4>
+      <br>
+      <button class="btn btn-success">Join PharmaHub</button>
+    </form>
+    <br>
+  </body>

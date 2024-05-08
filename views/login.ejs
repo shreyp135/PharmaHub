@@ -1,0 +1,39 @@
+<% layout("boilerplate.ejs") %>
+
+<body>
+    <div class="row mt-3 mb-4">
+        <h2 style="text-align: center;">Login on PharmaHub <i class="fa-solid fa-stethoscope"></i></h2>
+        <div class="col-6 offset-3"style="margin-top:4rem">
+        <form action="/login" method="post" class="needs-validation" >
+        <div class="mb-3">
+
+        <lable for="username" class="form-label">Username </lable>
+        <input name="username"id="username" type="text"class="form-control" required/>
+
+        <div class="valid-feedback"> Looks good !</div>
+        </div>
+       
+            <div class="mb-3">
+                <lable for="password" class="form-label">Password</lable>
+                <input
+                name="password"
+                id="password"
+                type="password"
+                class="form-control"
+                required
+                />
+                
+                </div>
+                    <button class="btn " style="margin-bottom: 7rem;margin-top: 2rem;background-color:#529c7c;color: white;">Login</button>
+                    <!-- margin-right: 4rem;margin-left: 10rem;
+                        <a href="/signup">
+                        <button class="btn btn-success" style="margin-bottom: 7rem;"> or Signup </button>
+                    </a> -->
+   
+                </form>
+       
+       
+        </div>
+        </div>
+</body>
+<br>
