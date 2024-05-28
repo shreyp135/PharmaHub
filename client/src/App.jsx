@@ -1,14 +1,18 @@
-import { useState } from 'react'
+import Home from '../pages/Home';
 import './App.css'
-import Header from '../components/navbar'
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import SignIn from "../pages/SignIn";
+import SignUp from "../pages/Signup";
 
 function App() {
 
-  return (
-    <>
-       <h2>hello</h2>
-            
-    </> 
+  return (<BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/SignIn" element={<SignIn/>}/>
+      <Route path="/SignUp" element={<SignUp/>}/>
+    </Routes>
+  </BrowserRouter>
   );
 }
 
