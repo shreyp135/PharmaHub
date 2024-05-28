@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import userRoutes from "./routes/user_route.js";
 
 //.env file config
 dotenv.config();
@@ -21,3 +22,4 @@ app.listen(8080,()=>{
     console.log("Server started on port 8080");
 });
 
+app.use("/", userRoutes);
