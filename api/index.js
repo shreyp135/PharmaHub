@@ -7,10 +7,6 @@ import authRoutes from "./routes/auth_route.js"
 //.env file config
 dotenv.config();
 
-//express app 
-const app = express();
-app.use(express.json());
-
 //database connection
 mongoose.connect(process.env.MONGO_URL).then(() =>{
     console.log("Connected to MongoDB server successfully");
@@ -18,14 +14,16 @@ mongoose.connect(process.env.MONGO_URL).then(() =>{
     console.log(err);
 });
 
+//express app 
+const app = express();
+app.use(express.json());
 
-//server start
-app.listen(8080,()=>{
-    console.log("Server started on port 8080");
-});
 
+//routes 
 app.use("/", userRoutes);
 app.use("/api/auth", authRoutes);
+
+
 
 app.use((err, req, res, next)=>{
     const statusCode = err.statusCode || 500;
@@ -33,6 +31,12 @@ app.use((err, req, res, next)=>{
     return res.status(statusCode).json({
         success: false,
         message,
-        statusCode
+        statusCode,
     });
+});
+
+
+//server start
+app.listen(8080,()=>{
+    console.log("Server started on port 8080");
 });
