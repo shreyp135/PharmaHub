@@ -35,3 +35,50 @@ export const signin = async (req,res,next)=>{
         }
 
 };
+
+export const googleHandler = async (req, res, next) => {
+    try {
+      const currentUser = await User.findOne({ email: req.body.email });
+      if (currentUser) {
+        const token = jwt.sign({ id: currentUser._id }, process.env.JWT_SECRET);
+        const { password: pass, ...cred } = currentUser._doc;
+        const expiryDate = new Date(Date.now() + 259200000)//expiry after 3 days
+        res
+          .cookie('access_token', token, {
+            httpOnly: true,
+            expires: expiryDate,
+          })
+          .status(200)
+          .json(cred);
+      } else {
+        const generatedPassword =
+          Math.random().toString(36).slice(-8) +
+          Math.random().toString(36).slice(-8);
+        const newUser = new User({
+        //   username:
+        //     req.body.name.split(' ').join('').toLowerCase() +
+        //     Math.random().toString(36).slice(-8),
+          email: req.body.email,
+          password: generatedPassword,
+        //   profilePicture: req.body.photo,
+        });
+        await newUser.save();
+        const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET);
+        const { password: pass, ...cred } = newUser._doc;
+        const expiryDate = new Date(Date.now() + 259200000)//expiry after 3 days
+        res
+          .cookie('access_token', token, {
+            httpOnly: true,
+            expires: expiryDate,
+          })
+          .status(200)
+          .json(cred);
+      }
+    } catch (error) {
+      next(error);
+    }
+  };
+
+export const signout = async (req,res,next) =>{
+    res.clearCookie('access_token').status(200).json('Signout success!');
+};
