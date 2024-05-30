@@ -1,20 +1,29 @@
-import Home from './pages/Home';
 import './App.css'
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import Home from './pages/Home';
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/Signup";
 import Cart from "./pages/cart";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
 function App() {
+  
+  return (
+    <>
+    <Navbar/>
 
-  return (<BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/SignIn" element={<SignIn/>}/>
-      <Route path="/SignUp" element={<SignUp/>}/>
-      <Route path="/cart" element={<Cart/>}/>
-    </Routes>
-  </BrowserRouter>
+      <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/SignIn" element={<SignIn/>}/>
+            <Route path="/SignUp" element={<SignUp/>}/>
+            <Route path="/cart" element={<Cart/>}/>
+          </Routes>
+      </BrowserRouter>
+
+  <Footer/>
+  </>
   );
 }
 
