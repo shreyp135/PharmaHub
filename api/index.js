@@ -1,8 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cors from "cors";
 import userRoutes from "./routes/user_route.js";
-import authRoutes from "./routes/auth_route.js"
+import authRoutes from "./routes/auth_route.js";
+import paymentRoutes from "./routes/payment_route.js";
 
 //.env file config
 dotenv.config();
@@ -17,11 +19,14 @@ mongoose.connect(process.env.MONGO_URL).then(() =>{
 //express app 
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(cors());
 
 
 //routes 
 app.use("/", userRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api", paymentRoutes);
 
 
 //error handling middleware
