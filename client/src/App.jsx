@@ -25,7 +25,6 @@ function App() {
             <Route path="/videoRoom/1003" element={<VideoRoom/>}/>
           </Routes>
       </BrowserRouter>
-
   <Footer/>
   </>
   );
