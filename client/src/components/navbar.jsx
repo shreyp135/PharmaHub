@@ -4,10 +4,10 @@ import Dropdown from "./dropdown"
 export default function navbar() {
   return (
     <>
-    <div className="flex h-16 bg-[#102a43] items-center justify-start gap-x-8  ">
+    <div className="flex h-16 bg-[#102a43] items-center justify-start gap-x-8 sticky top-0 ">
       
         <div className='flex-auto text-2xl mx-4 '>
-            <a className="text-[#1f9c61]" href="/">PharmaHub <i class="fa-solid fa-stethoscope "></i></a>
+            <a className="text-[#1f9c61]" href="/">PharmaHub <i class="fa-solid fa-stethoscope fa-beat"></i></a>
         </div>
         <div className='flex-auto text-lg mx-4 text-white'>
             <a href="/consult">Consult a Doctor</a>
@@ -28,7 +28,9 @@ export default function navbar() {
           <Dropdown className="text-black"/>
         </div>
         <div className='mr-4'>
+          <a href="/signup">
           <button className='bg-gray-600 p-2 text-white rounded-lg text-sm '>Signup/Login</button>
+          </a>
         </div>
     </div>
     </>

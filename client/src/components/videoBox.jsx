@@ -43,7 +43,7 @@ const VideoBox = () => {
   }, []);
 
   return (
-    <div id="root" ref={rootRef} style={{ width: '100vw', height: '100vh' }}></div>
+    <div id="root" className=" -z-10   "ref={rootRef} ></div>
   );
 };
 

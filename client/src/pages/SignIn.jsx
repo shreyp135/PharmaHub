@@ -47,7 +47,7 @@ export default function SignIn() {
         <>
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                    <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+                    <h2 className="mt-6 mb-6 text-center text-3xl font-bold leading-9 tracking-tight text-gray-900">
                         Sign in to your account
                     </h2>
                 </div>
@@ -66,7 +66,7 @@ export default function SignIn() {
                                     type="email"
                                     autoComplete="email"
                                     required
-                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 />
                             </div>
                         </div>
@@ -76,11 +76,7 @@ export default function SignIn() {
                                 <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
                                     Password
                                 </label>
-                                <div className="text-sm">
-                                    <Link to="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                                        Forgot password?
-                                    </Link>
-                                </div>
+                               
                             </div>
                             <div className="mt-2">
                                 <input
@@ -90,25 +86,26 @@ export default function SignIn() {
                                     type="password"
                                     autoComplete="current-password"
                                     required
-                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 />
                             </div>
                         </div>
 
-                        <div>
+                        <div >
                             <button
                                 type="submit"
-                                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                className="flex mb-2 mt-6 w-full justify-center rounded-md bg-[#1f9c61] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-smhover:duration-500 hover:shadow-xl hover:shadow-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                             >
                                 Sign in
                             </button>
+                            <OAuth />
                         </div>
-                        <OAuth />
+                       
                     </form>
 
                     <p className="mt-10 text-center text-sm text-gray-500">
-                        Don't have an account?{" "}
-                        <Link to="/SignUp" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                        Don't have an account &#x3f;
+                        <Link to="/SignUp" className="ml-2 text-blue-500 underline ">
                             Sign-up
                         </Link>
                     </p>

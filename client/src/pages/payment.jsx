@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios";
 
-export default function Cart() {
+export default function Payment() {
     const handleCheckout = async ()=>{
         const amount = 500;
         const {data:{order}} = await axios.post("http://localhost:8080/api/checkout",{
@@ -13,19 +13,19 @@ export default function Cart() {
             currency: "INR",
             name: "PharmaHub",
             description: "Transaction",
-            image: "https://example.com/your_logo",
+            image: <i class="fa-solid fa-stethoscope "></i>,
             order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
             callback_url: "http://localhost:8080/api/paymentVerification",
             prefill: {
-                name: "Gaurav Kumar",
-                email: "gaurav.kumar@example.com",
+                name: "",
+                email: "pharmahub@example.com",
                 contact: "9000090000"
             },
             notes: {
                 address: "Razorpay Corporate Office"
             },
             theme: {
-                "color": "#3399cc"
+                "color": "#1f9c61"
             }
         };
        const razor = new window.Razorpay(options);

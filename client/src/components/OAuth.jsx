@@ -27,6 +27,6 @@ export default function OAuth() {
       }
   };
   return (
-    <div><button type='button' onClick={handleGoogle}>Gooogleee</button></div>
+    <div><button className="w-full bg-blue-500 hover:duration-500 hover:shadow-xl hover:shadow-gray-400 text-white rounded-md h-9 text-sm" type='button' onClick={handleGoogle}> <i  class="fa-brands fa-google mr-2"></i>Login with Google</button></div>
   )
 }
