@@ -21,16 +21,16 @@ function App() {
 
       <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/SignIn" element={<SignIn/>}/>
-            <Route path="/SignUp" element={<SignUp/>}/>
-            <Route path="/payment" element={<Payment/>}/>
-            <Route path="/consult" element={<Consult/>}/>
-            <Route path="/videoRoom/1003" element={<VideoRoom/>}/>
-            <Route path="/doctorSignup" element={<DoctorSignup/>}/>
-            <Route path="/insuranceSignup" element={<InsuranceSignup/>}/>
-            <Route path="/insurance" element={<Insurance/>}/>
-            <Route path="/medicines" element={<Medicines/>}/>
+            <Route path="https://pharma-hub.vercel.app//" element={<Home/>}/>
+            <Route path="https://pharma-hub.vercel.app//SignIn" element={<SignIn/>}/>
+            <Route path="https://pharma-hub.vercel.app//SignUp" element={<SignUp/>}/>
+            <Route path="https://pharma-hub.vercel.app//payment" element={<Payment/>}/>
+            <Route path="https://pharma-hub.vercel.app//consult" element={<Consult/>}/>
+            <Route path="https://pharma-hub.vercel.app//videoRoom/1003" element={<VideoRoom/>}/>
+            <Route path="https://pharma-hub.vercel.app//doctorSignup" element={<DoctorSignup/>}/>
+            <Route path="https://pharma-hub.vercel.app//insuranceSignup" element={<InsuranceSignup/>}/>
+            <Route path="https://pharma-hub.vercel.app//insurance" element={<Insurance/>}/>
+            <Route path="https://pharma-hub.vercel.app//medicines" element={<Medicines/>}/>
 
           </Routes>
       </BrowserRouter>
